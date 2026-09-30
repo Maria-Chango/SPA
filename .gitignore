@@ -1,14 +1,13 @@
-# Backend
+# Python
 venv/
-.env
-*.db
 __pycache__/
+*.db
 
-# Frontend
+# Node
 node_modules/
 dist/
-.env
 
-# Llaves y secretos
+# Secretos
+.env
 *.pem
 *.tgz
