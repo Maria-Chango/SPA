@@ -1,0 +1,14 @@
+# Backend
+venv/
+.env
+*.db
+__pycache__/
+
+# Frontend
+node_modules/
+dist/
+.env
+
+# Llaves y secretos
+*.pem
+*.tgz
