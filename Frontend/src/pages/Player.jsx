@@ -43,12 +43,15 @@ export default function Player() {
     <div className="player-layout">
       <section>
         <video src={video.video_url} poster={video.thumbnail_url} controls className="player" />
-        <h2>{video.title}</h2>
-        <p className="muted">
-          {video.user_name} · {video.views} vistas ·{" "}
-          {new Date(video.created_at).toLocaleDateString()}
-        </p>
-        <p>{video.description}</p>
+
+        <div className="player-info">
+          <h2>{video.title}</h2>
+          <p className="muted">
+            {video.user_name} · {video.views} vistas ·{" "}
+            {new Date(video.created_at).toLocaleDateString()}
+          </p>
+          <p>{video.description}</p>
+        </div>
 
         <h3>{comments.length} comentarios</h3>
         <form onSubmit={send} className="comment-form">
@@ -63,9 +66,12 @@ export default function Player() {
         {error && <p className="error">{error}</p>}
         {comments.map((c) => (
           <div key={c.id} className="comment">
-            <strong>{c.user_name}</strong>{" "}
-            <span className="muted">{new Date(c.created_at).toLocaleString()}</span>
-            <p>{c.content}</p>
+            <span className="avatar">{c.user_name[0].toUpperCase()}</span>
+            <div>
+              <strong>{c.user_name}</strong>{" "}
+              <span className="muted">{new Date(c.created_at).toLocaleString()}</span>
+              <p>{c.content}</p>
+            </div>
           </div>
         ))}
       </section>

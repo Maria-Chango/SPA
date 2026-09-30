@@ -7,14 +7,16 @@ export default function Navbar() {
 
   return (
     <header className="navbar">
-      <Link to="/" className="brand">▶ VideoPlatform</Link>
+      <Link to="/" className="brand">
+        <i>▶</i><span>VideoPlatform</span>
+      </Link>
       {user && (
         <nav>
-          <Link to="/profile">{user.name}</Link>
-          <button
-            className="link"
-            onClick={() => { logout(); navigate("/auth"); }}
-          >
+          <Link to="/profile" className="user-chip">
+            <span className="avatar">{user.name[0].toUpperCase()}</span>
+            {user.name}
+          </Link>
+          <button className="link" onClick={() => { logout(); navigate("/auth"); }}>
             Salir
           </button>
         </nav>

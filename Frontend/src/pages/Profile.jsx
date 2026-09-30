@@ -78,10 +78,13 @@ export default function Profile() {
 
   return (
     <div>
-      <section className="profile-head">
-        <h2>{info.name}</h2>
-        <p className="muted">{info.email}</p>
-        <p><strong>{info.video_count ?? videos.length}</strong> videos publicados</p>
+            <section className="profile-head">
+        <span className="avatar big">{info.name[0].toUpperCase()}</span>
+        <div>
+          <h2>{info.name}</h2>
+          <p className="muted">{info.email}</p>
+          <p><strong>{info.video_count ?? videos.length}</strong> videos publicados</p>
+        </div>
       </section>
 
       <section>
