@@ -14,11 +14,11 @@ export default function Home() {
   if (!videos) return <p>Cargando...</p>;
   if (videos.length === 0) return <p>Aún no hay videos. ¡Sube el primero desde tu perfil!</p>;
 
-  return (
+    return (
     <>
       <section className="hero">
-        <h1>Descubre lo último 🎬</h1>
-        <p>{videos.length} videos publicados por la comunidad</p>
+        <h1>Videos recientes</h1>
+        <p>{videos.length} videos publicados</p>
       </section>
       <div className="grid">
         {videos.map((v) => <VideoCard key={v.id} video={v} />)}
