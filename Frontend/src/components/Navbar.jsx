@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <Link to="/" className="brand">
-        <i>▶</i><span>VideoPlatform</span>
+        <i></i><span>PlayVideos</span>
       </Link>
       {user && (
         <nav>
